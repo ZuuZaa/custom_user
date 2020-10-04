@@ -1,0 +1,39 @@
+{% extends "account/auth_base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Signup for an account</h4>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}
+            <input type="hidden" name="next" value="{{ next }}">
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{ form.as_p }}
+    {{form.birth_date}}
+    {{form.status}}
+
+    {% for field in form%}
+    form field{{field.field.label}}
+    {% endfor %}
+    <input type="submit" value="Submit" />
+
+</body>
+</html> -->
+
+<!--templates/registration/register.html-->
